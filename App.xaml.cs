@@ -2,10 +2,21 @@
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+    public static DatabaseContext DatabaseContext { get; private set; }
+
+    public App()
+    {
+        InitializeComponent();
+        var dbPath = Path.Combine(FileSystem.AppDataDirectory, "database.db");
+        DatabaseContext = new DatabaseContext(dbPath);
+        InitializeSampleData();
+        MainPage = new AppShell();
+    }
+
+    protected async void InitializeSampleData()
+    {
+        await DatabaseContext.InitializeSampleData();
+
+    }
 }
