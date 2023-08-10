@@ -17,6 +17,11 @@ public partial class App : Application
     protected async void InitializeSampleData()
     {
         await DatabaseContext.InitializeSampleData();
+        var titleBarBackgroundColor = (Color)Resources["TitleBarBackgroundColor"];
+        if (MainPage is NavigationPage navigationPage)
+        {
+            navigationPage.BarBackgroundColor = titleBarBackgroundColor;
+        }
 
     }
 }

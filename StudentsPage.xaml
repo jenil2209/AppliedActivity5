@@ -2,14 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppliedActivity5.StudentsPage"
-             Title="StudentsPage">
+             Title="StudentsPage"
+             BackgroundColor="#FFC0CB">
+    <!-- Pink background color -->
+
     <StackLayout>
         <ListView x:Name="StudentsListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Email}" />
+                    <TextCell Text="{Binding Name}" 
+                              Detail="{Binding Email}"
+                              TextColor="#FF1493" 
+                         DetailColor="#FF69B4"
+                         />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
+
 </ContentPage>

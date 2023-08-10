@@ -1,11 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppliedActivity5.MainPage">
+             x:Class="AppliedActivity5.MainPage"
+             BackgroundColor="Transparent">
+    <!-- Set background color to transparent -->
 
-    <StackLayout>
-        <Button Text="List Students" Clicked="OnListStudentsClicked" />
-        <Button Text="List Courses" Clicked="OnListCoursesClicked" />
-    </StackLayout>
+    <Grid>
+        <!-- Background image -->
+        <Image Source="https://npr.brightspotcdn.com/dims4/default/eb66e5d/2147483647/strip/true/crop/1041x781+0+0/resize/1760x1320!/quality/90/?url=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2019%2F11%2F05%2Fberea-college-draper-hall--606e7002c80f39600354ed9afa168aaba7076fe4.jpg"
+               Aspect="AspectFill"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" />
+
+        <!-- Overlay content -->
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <Button Text="List Students"
+                    Clicked="OnListStudentsClicked"
+                    BackgroundColor="#FF1493"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="16"
+                    WidthRequest="160"
+                    HeightRequest="60" />
+
+            <Button Text="List Courses"
+                    Clicked="OnListCoursesClicked"
+                    BackgroundColor="#FF1493"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="16"
+                    WidthRequest="160"
+                    HeightRequest="60" />
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
